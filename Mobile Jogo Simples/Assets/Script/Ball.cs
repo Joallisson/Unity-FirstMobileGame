@@ -34,10 +34,9 @@ public class Ball : MonoBehaviour
         {
             isRight = !isRight; //Invertendo o valor de isRight
         }
-
-        //Função que verifica a distância entre a bola e os objetos invisíveis nos extremos //Dentro do if está usnado a lógica que OU inverte a direção da bola para um lado ou pro outro
-        if (Vector2.Distance(transform.position, pointL.position) < 0.1f || Vector2.Distance(pointR.position, transform.position) < 0.5f) //Verificar se a bola triscou no objeto invisível que está na extremidade da esquerda // transform.position => Retorna a posição da bola e pointL.position => Retorna a posição do objeto na extermidade da esquerda, ái é feita a subtração dessas duas posições
-        {
+        
+        //Condição que verifica se a posição da bola estão entre esses dois valores
+        if(transform.position.x >= 2.42f || transform.position.x <= -2.42f){
             isRight = !isRight; //Invertendo o valor de isRight
         }
     }
